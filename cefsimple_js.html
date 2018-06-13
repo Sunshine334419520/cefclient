@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<!--
+Copyright (c) 2016 foruok@微信订阅号“程序视界”(programmer_sight).
+All rights reserved.
+Use of this source code is governed by a BSD-style license that can be
+found in the LICENSE file.
+-->
+<head>
+    <script type="text/javascript">
+        function doQuery() {
+            window.cefQuery({
+                    request: document.getElementById("query").value,
+                    persistent: false,
+                    onSuccess: function(response) { alert(response); },
+                    onFailure: function(code, msg) { alert(code + " - " + msg); }
+                }
+            );
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Test Cef Query</title>
+</head>
+
+<body>
+<form>
+    Query String: <input type="text" id="query" value="HelloCefQuery"/>&nbsp;&nbsp;<input  type="button" value="SendQuery" onclick="doQuery()"/>
+</form>
+</body>
+</html>
